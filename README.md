@@ -6,10 +6,10 @@ To conduct this extension, we propose to use a new dataset that we will collect 
 ## Research Questions  
 * Can we observe an immediate drop in Tweets on privacy-sensistive subjects after the Snowden revelations?
 * Can we detect a long-lasting Chlling Effect on Twitter after the Snowden revelations?
-* Is the Snowden revelations' effect significantly different on Twitter than on Wikipedia?
+* Is the Snowden revelations' effect significantly different on Twitter and Wikipedia?
 
 ## Proposed dataset  
-For this extension, we will create our own dataset using both the [Twitter API](https://developer.twitter.com/en/docs/twitter-api) and the [Twint library](https://github.com/twintproject/twint). For the time period we are interested in, we will collect all Tweets containing one of the keywords from the U.S. Department of Homeland Security's list (that is used in the paper). And at the same time, we will collect a sample of random Tweets for some non-sensitive security-related keywords to have a basis for comparison with subjects that should not be affected by Chilling Effects. Finally we will also compare with the total number of Tweets per day over that period to analyse our results with respect to the general trend.
+For this extension, we will create our own dataset using both the [Twitter API](https://developer.twitter.com/en/docs/twitter-api) and the [Twint library](https://github.com/twintproject/twint). For the time period we are interested in, we will collect all Tweets containing one of the keywords from the U.S. Department of Homeland Security's list (that is used in the paper). And at the same time, we will collect Tweets for some non-sensitive security-related keywords to have a basis for comparison with subjects that should not be affected by Chilling Effects. Finally we will also compare with the total number of Tweets per day over that period to analyse our results with respect to the general trend.
 
 Here are some Tweets containing the word "Al-qaeda" that were scraped using Twint:
 |id|conversation_id|created_at|date|time|timezone|user_id|username|name|place|tweet|language|mentions|urls|photos|replies_count|retweets_count|likes_count|hashtags|cashtags|link|retweet|quote_url|video|thumbnail|near|geo|source|user_rt_id|user_rt|retweet_id|reply_to|retweet_date|translate|trans_src|trans_dest|
