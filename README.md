@@ -9,7 +9,7 @@ To conduct this extension, we propose to use a new dataset that we will collect 
 * Is the Snowden revelations' effect significantly different on Twitter and Wikipedia?
 
 ## Proposed dataset  
-For this extension, we will create our own dataset using both the [Twitter API](https://developer.twitter.com/en/docs/twitter-api) and the [Twint library](https://github.com/twintproject/twint). For the time period we are interested in, we will collect all Tweets containing one of the keywords from the U.S. Department of Homeland Security's list (that is used in the paper). And at the same time, we will collect Tweets for some non-sensitive security-related keywords to have a basis for comparison with subjects that should not be affected by Chilling Effects. Finally we will also compare with the total number of Tweets per day over that period to analyse our results with respect to the general trend.
+For this extension, we will create our own dataset using both the [Twitter API](https://developer.twitter.com/en/docs/twitter-api) and the [Twint library](https://github.com/twintproject/twint). For the time period we are interested in, we will collect all Tweets containing one of the keywords from the U.S. Department of Homeland Security's list that is used in the paper such as "Al Qaeda" or "Terrorism. And at the same time, we will collect Tweets for some non-sensitive security-related keywords to have a basis for comparison with subjects that should not be affected by Chilling Effects. Finally we will also compare with the total number of Tweets per day over that period to analyse our results with respect to the general trend.
 
 Here are some Tweets containing the word "Al-qaeda" that were scraped using Twint:
 |id|conversation_id|created_at|date|time|timezone|user_id|username|name|place|tweet|language|mentions|urls|photos|replies_count|retweets_count|likes_count|hashtags|cashtags|link|retweet|quote_url|video|thumbnail|near|geo|source|user_rt_id|user_rt|retweet_id|reply_to|retweet_date|translate|trans_src|trans_dest|
@@ -20,15 +20,14 @@ Here are some Tweets containing the word "Al-qaeda" that were scraped using Twin
 |494991555611336704|494986152718258176|2014-08-01 01:42:38 CEST|2014-08-01|01:42:38|+0100|27947724|bcwestmind|ArmandRichelieuofPoitou||"@TheTorontoSun @kinsellawarren #cdnpoli I'll say. Most don't know diff b/w Taliban/al-qaeda/jihadists/Saddam, war on terror fog reigns."|en|"[{'screen_name': 'kinsellawarren, 'name': 'warren kinsella', 'id': '16106522'}]"|||0|0|0|['cdnpoli']||https://twitter.com/bcwestmind/status/494991555611336704|False||0||||||||||||
 
 
-
 ## Methods  
-We will try and replicate the analyses that were conducted in the paper on our new dataset, especially the Iterrupted Time Series analysis. Then we will be able to say if we get similar results than with Wikipedia and try to interpret the similarities and differences. In order to add some value to our analysis, we can leverage the different format of data that we have (text compared to pageviews). We can perform some NLP on the Tweets (e.g., sentiment analysis) to assess if there is a chilling effect from a different perspective. For instance, the number of tweets may not decrease suddenly but opinions expressed may change and align with the government's ideas.
+We will try and replicate the analyses that were conducted in the paper on our new dataset, especially the Iterrupted Time Series analysis. Then we will be able to say if we get similar results than with Wikipedia and try to interpret the similarities and differences. In order to add some value to our analysis, we can leverage the different format of data that we have (text compared to pageviews). We will be able to perform some NLP on the Tweets (e.g., sentiment analysis) to assess if there is a chilling effect from a different perspective. For instance, the number of tweets may not decrease suddenly but opinions expressed may change and align with the government's ideas. 
 
 ## Organization within the team  
 List of internal milestones :
-- [ ] 1/12 : Dataset has been collected and is ready for exploration
-- [ ] 5/12 : Data has been cleaned and explored to make sure there are no anomalies
-- [ ] 9/12 : Rough analysis has been conducted and we have an idea of the final results
-- [ ] 13/12 : Analysis is finished, we know the results and only have to present them
-- [ ] 16/12 : Report is ready, results are presented in a clear and organized way
+- [ ] 1/12 : Dataset has been collected and is ready for exploration (@Julien_Ben)
+- [ ] 5/12 : Data has been cleaned and explored to make sure there are no anomalies (@JulienVig, @hugolepeytre)
+- [ ] 9/12 : Rough analysis has been conducted and we have an idea of the final results (individually followed by a brainstorm) 
+- [ ] 13/12 : Analysis is finished, we know the results and only have to present them (@Julien_Vig)
+- [ ] 16/12 : Report is ready, results are presented in a clear and organized way (@Julien_Ben, @hugolepeytre)
 - [ ] 18/12 : Submission date
