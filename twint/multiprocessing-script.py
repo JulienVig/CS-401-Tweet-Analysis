@@ -1,31 +1,31 @@
 import threading
 import multiprocessing
 from time import sleep
-from joblib import Parallel, delayed
 import threading
+from time_partition import *
 
 import twint
 import nest_asyncio
-import tqdm
 import datetime
 import os
 
 nest_asyncio.apply()
-DATA_FILE = "data_test/"
+DATA_FILE = "data_scrap/"
 
-NB_PROC = 12
-NB_THREAD_P_PROC = 20
+NB_PROC = 4
+NB_THREAD_P_PROC = 12
 
 def process_run(task_queue):
     for i in range(NB_THREAD_P_PROC):
         thread = threading.Thread(target = thread_run, args=(task_queue,))
         thread.start()
+        sleep(20)
 
 def thread_run(task_queue):
     continue_ = True
     while continue_:
         task = task_queue.get()
-        if task == None: #TODO change
+        if task == None:
             task_queue.put(None)
             continue_ = False
             break
@@ -35,27 +35,38 @@ def thread_run(task_queue):
         print("Beginning scrapping ", term, " from ", since, " until ", until)
         Scrap(term, since, until)
         print("Finished scrapping ", term, " from ", since, " until ", until)
-        if (int(until[-2:])>25):
-            print("##################### Finished term ", term)
-    #print("No more element in the queue, terminating")
+        if (until == "2014-12-31"):
+            print("##################### Finished last month of term ", term)
+    print("No more element in the queue, terminating")
 
 def Scrap(term, since, until):
     print(term, ' from ', since, ' to ', until)
     c = twint.Config()
+    twint.token.Token(c).refresh()
     c.Search = term
     c.Since = since
     c.Until = until
     #c.Until = "2012-06-01"
     folder = DATA_FILE+term
-    os.mkdir(folder)
+    if not os.path.isdir(folder):
+        os.mkdir(folder)
     c.Output = folder+'/'+since+'-'+term+".csv"
     c.Hide_output = True
     c.Store_csv = True
     twint.run.Search(c)
     
 if __name__ == '__main__':
+    short_terms = ['abu_sayyaf', 'al-qaeda', 'al-qaeda_in_the_arabian_peninsula', 'al-qaeda_in_the_islamic_maghreb', 'al-shabaab', 'ammonium_nitrate', 'biological_weapon', 'car_bomb', 'chemical_weapon', 'conventional_weapon', 'dirty_bomb', 'eco-terrorism', 'environmental_terrorism', 'euskadi_ta_askatasuna', 'extremism', 'farc', 'fundamentalism', 'hezbollah', 'improvised_explosive_device', 'irish_republican_army', 'jihad', 'nuclear_enrichment', 'palestine_liberation_front', 'political_radicalism', 'suicide_attack', 'suicide_bomber', 'taliban', 'tamil_tigers', 'tehrik-i-taliban_pakistan', 'weapons-grade']
+    short_terms = short_terms[8:]
+    work = []
+
+    for keyword in short_terms:
+        work+=create_keyword_partition(keyword, 5)
+    work = sorted(work, key= lambda elem: elem[0])
+    print(work[:5])
+
     task_queue = multiprocessing.Queue()
-    work = [['abu_sayyaf', '2012-01-01', '2012-02-01'], ['afghanistan', '2012-01-01', '2012-02-01']]
+
     for w in work:
         task_queue.put(w)
     for i in range(NB_PROC):
@@ -63,5 +74,4 @@ if __name__ == '__main__':
     num_cores = multiprocessing.cpu_count()
     print(num_cores)
     the_pool = multiprocessing.Pool(NB_PROC, process_run, (task_queue,))
-    #results = Parallel(n_jobs=NB_PROC)(delayed(process_run)(task_queue) for i in range(NB_PROC))
-    sleep(45)
+    sleep(7200)
