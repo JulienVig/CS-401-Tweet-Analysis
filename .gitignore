@@ -4,3 +4,4 @@ __pycache__
 legacy_data/
 ADA_dataset/
 full_csv/
+notebooks/
