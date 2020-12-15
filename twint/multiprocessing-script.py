@@ -1,19 +1,23 @@
 import threading
 import multiprocessing
 from time import sleep
-import threading
-from time_partition import *
+
 
 import twint
 import nest_asyncio
 import datetime
 import os
+import sys
+
+# sys.path.append('../scripts/time_partition')
+sys.path.insert(1, '../scripts/')
+from time_partition import create_keyword_partition
 
 nest_asyncio.apply()
-DATA_FILE = "data_scrap/"
+DATA_FILE = "../sample_scrap/"
 
-NB_PROC = 4
-NB_THREAD_P_PROC = 12
+NB_PROC = 2
+NB_THREAD_P_PROC = 1
 
 def process_run(task_queue):
     for i in range(NB_THREAD_P_PROC):
@@ -56,11 +60,14 @@ def Scrap(term, since, until):
     twint.run.Search(c)
     
 if __name__ == '__main__':
-    short_terms = ['abu_sayyaf', 'al-qaeda', 'al-qaeda_in_the_arabian_peninsula', 'al-qaeda_in_the_islamic_maghreb', 'al-shabaab', 'ammonium_nitrate', 'biological_weapon', 'car_bomb', 'chemical_weapon', 'conventional_weapon', 'dirty_bomb', 'eco-terrorism', 'environmental_terrorism', 'euskadi_ta_askatasuna', 'extremism', 'farc', 'fundamentalism', 'hezbollah', 'improvised_explosive_device', 'irish_republican_army', 'jihad', 'nuclear_enrichment', 'palestine_liberation_front', 'political_radicalism', 'suicide_attack', 'suicide_bomber', 'taliban', 'tamil_tigers', 'tehrik-i-taliban_pakistan', 'weapons-grade']
-    short_terms = short_terms[8:]
+
+    if not os.path.isdir(DATA_FILE):
+        os.mkdir(DATA_FILE)
+
+    sample = ['abu_sayyaf']
     work = []
 
-    for keyword in short_terms:
+    for keyword in sample:
         work+=create_keyword_partition(keyword, 5)
     work = sorted(work, key= lambda elem: elem[0])
     print(work[:5])
