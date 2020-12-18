@@ -31,4 +31,4 @@ List of internal milestones :
 - [x] 9/12 : Rough analysis has been conducted and we have an idea of the final results (individually followed by a brainstorm) 
 - [x] 13/12 : Analysis is finished, we know the results and only have to present them (@JulienVig)
 - [x] 16/12 : Report is ready, results are presented in a clear and organized way (@Julien_Ben, @hugolepeytre)
-- [ ] 18/12 : Submission date
+- [x] 18/12 : Submission date
