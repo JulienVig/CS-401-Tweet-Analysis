@@ -32,3 +32,7 @@ List of internal milestones :
 - [x] 13/12 : Analysis is finished, we know the results and only have to present them (@JulienVig)
 - [x] 16/12 : Report is ready, results are presented in a clear and organized way (@Julien_Ben, @hugolepeytre)
 - [x] 18/12 : Submission date
+
+## Repo organization
+The final Notebook is tweet_analysis.ipynb and the report is ADA_Report_P4.pdf
+The other folders are scripts used in the Notebook
