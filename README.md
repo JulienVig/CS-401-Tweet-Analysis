@@ -2,7 +2,7 @@
 
 This project was realized in the CS-401 Applied Data Analysis class. Within this class we reproduced the experiment of a paper, analyzing the effect of government online surveillance evidences on Wikipedia. Inspired by this paper, we studied this effect, called Chilling Effects on Tweeter, focusing on terrorism. We realized this analysis from scratch, constructing a dataset by scraping, processing the data and performing statistical analysis. My main contributions are the data scraping, exploration and analysis using Interrupted Time Series.
 
-The [report](./report.pdf) explains our approach and methodology while the [notebook](./tweet_analysis.ipynb) illustrates the successive steps and implementation in a guided manner. The sole purpose of this fork is to record the project within my personal Github page and list my contributions. These lines are the only modifications to the original repository.
+The [report](./report.pdf) explains our approach and methodology while the [notebook](./tweet_analysis.ipynb) illustrates the successive steps and implementation in a guided manner. The sole purpose of this fork is to record the project within my personal Github page and list my contributions.
 
 
 ## Abstract  
