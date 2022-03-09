@@ -12,6 +12,9 @@ This project was realized in the CS-401 Applied Data Analysis class in which I a
 
 The [report](./report.pdf) explains our approach and methodology while the [notebook](./tweet_analysis.ipynb) illustrates the successive steps and implementation in a guided manner. The sole purpose of this fork is to reference the project within my personal Github page and to state my contributions.
 
+<p align="center">
+  <img src="./assets/ITS.png"/>
+<p/>
 
 ## Abstract  
 The paper we studied tried to detect Chilling Effects related to online surveillance by studying Wikipedia use. More precisely pageviews from specific privacy-sensitive keywords. We would like to extend this analysis to a different part of the Internet, namely the social network Twitter, and check if the results that were found on Wikipedia pageviews also apply there. Analyzing a social network may lead to some new insights as users may represent a different population from Wikipedia. Moreover users express their opinion through tweets and that is tightly linked to the free speech right, and so to a potential chilling effect. The reason we chose Twitter is because Tweets are a public form of Internet use that private Wikipedia searches, so users might think more carefully about what they express there. But at the same time it is completely legal to use those words in public so reservations that users may have to talk about these subjects are more likely due to a chilling effect, in other words to a feeling that the state might not protect their rights correctly.
