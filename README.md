@@ -1,5 +1,13 @@
 # Detecting Chilling Effects due to Online Surveillance through Tweets
 
+| |Overview  | 
+| - | - |
+|Course| CS-201 Applied Data Analysis|
+| Year | Autumn 2020 |
+| Final Grade | **5.75** / 6 |
+| Languages | Python, pandas, statsmodel, VADER |
+| Team size | 3 |
+
 This project was realized in the CS-401 Applied Data Analysis class in which I achieved a final grade of **5.75** on a 1 to 6 scale. Within this class we reproduced the experiment of a paper, analyzing the effect of government online surveillance evidences on Wikipedia. Inspired by this paper, we studied this effect, called Chilling Effects on Tweeter, focusing on terrorism. We realized this analysis from scratch, constructing a dataset by scraping, processing the data and performing statistical analysis. My main contributions are the data scraping, exploration and analysis using Interrupted Time Series.
 
 The [report](./report.pdf) explains our approach and methodology while the [notebook](./tweet_analysis.ipynb) illustrates the successive steps and implementation in a guided manner. The sole purpose of this fork is to reference the project within my personal Github page and to state my contributions.
